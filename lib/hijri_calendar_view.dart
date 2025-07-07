@@ -6,13 +6,11 @@ class HijriCalendarView extends StatelessWidget {
   const HijriCalendarView({
     super.key,
     required this.onDateSelected,
-    required this.locale,
     required this.initialDate,
     required this.firstDateHijri,
     required this.lastDateHijri,
   });
   final Function(String formattedDate) onDateSelected;
-  final Locale locale;
   final HijriDateTime initialDate;
   final HijriDateTime firstDateHijri;
   final HijriDateTime lastDateHijri;

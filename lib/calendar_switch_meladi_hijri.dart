@@ -10,7 +10,6 @@ import 'gregorian_calendar_view.dart';
 class CustomSwitchMeladiHijriPicker {
   static Future<void> show({
     required BuildContext context,
-    required Locale locale,
     required DateTime initialDate,
     required DateTime firstDate,
     required DateTime lastDate,
@@ -44,7 +43,6 @@ class CustomSwitchMeladiHijriPicker {
 
         return CalendarSwitchBody(
           onDateSelected: onDateSelected,
-          locale: locale,
           initialDate: initialDate,
           initialHijriDate: initialHijriDate,
           firstDate: firstDate,
@@ -70,7 +68,6 @@ class CalendarSwitchBody extends StatefulWidget {
   const CalendarSwitchBody({
     super.key,
     required this.onDateSelected,
-    required this.locale,
     required this.initialDate,
     required this.firstDate,
     required this.lastDate,
@@ -80,7 +77,7 @@ class CalendarSwitchBody extends StatefulWidget {
     this.intitialIndex,
   });
   final Function(String formattedDate) onDateSelected;
-  final Locale locale;
+
   final DateTime initialDate;
   final DateTime firstDate;
   final DateTime lastDate;
@@ -160,14 +157,12 @@ class _CalendarSwitchBodyState extends State<CalendarSwitchBody>
                   controller: _tabController,
                   children: [
                     GregorianCalendarView(
-                      locale: widget.locale,
                       initialDate: widget.initialDate,
                       firstDate: widget.firstDate,
                       lastDate: widget.lastDate,
                       onDateSelected: widget.onDateSelected,
                     ),
                     HijriCalendarView(
-                      locale: widget.locale,
                       initialDate: widget.initialHijriDate,
                       firstDateHijri: widget.firstDateHijri,
                       lastDateHijri: widget.lastDateHijri,

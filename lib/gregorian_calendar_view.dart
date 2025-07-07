@@ -6,13 +6,11 @@ class GregorianCalendarView extends StatelessWidget {
   const GregorianCalendarView({
     super.key,
     required this.onDateSelected,
-    required this.locale,
     required this.initialDate,
     required this.firstDate,
     required this.lastDate,
   });
   final Function(String formattedDate) onDateSelected;
-  final Locale locale;
   final DateTime initialDate;
   final DateTime firstDate;
   final DateTime lastDate;

@@ -94,10 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
             CustomSwitchMeladiHijriPicker.show(
               context: context,
               onDateSelected: (formattedDate) {
-                // Handle the selected date
                 print('Selected Date: $formattedDate');
               },
-              locale: Localizations.localeOf(context),
               initialDate: DateTime.now(),
               firstDate: DateTime(2000, 1, 1),
               lastDate: DateTime(2030, 12, 31),
